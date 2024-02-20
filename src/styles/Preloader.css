@@ -1,0 +1,56 @@
+/* Preloader Styles */
+
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #222220;
+	color: #dedede;
+	font-family: 'Inter', sans-serif;
+}
+
+.preloader__wrapper {
+	width: 80%;
+	margin: 10vh auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 3vh;
+}
+
+.preloader__title-main,
+.preloader__title {
+	color: #f90;
+	font-family: 'Orbitron', serif;
+	font-size: 2.4rem;
+	line-height: 3rem;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.preloader__title {
+	color: #fff;
+	font-size: 1.8rem;
+}
+
+.preloader__button {
+	width: 80%;
+	margin: 0 auto;
+	padding: 0.5rem;
+	background-color: #f90;
+	border: none;
+	border-radius: 200px;
+	color: #fff;
+	font-family: 'Orbitron', serif;
+	font-size: 1.3rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	cursor: pointer;
+}
