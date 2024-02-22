@@ -1,0 +1,16 @@
+/* Main Styles */
+
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #222220;
+	color: #dedede;
+	font-family: 'Inter', sans-serif;
+}

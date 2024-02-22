@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Content from './Content'
+import ResumeBuilder from './ResumeBuilder'
 import Preloader from './Preloader'
 import '../styles/App.css'
 
@@ -11,11 +11,11 @@ const App = () => {
 	}
 
 	if (!start) {
-		return (
-			<Preloader onClick={handleClick} />
-		)
+		return <Preloader onClick={handleClick} />
 	}
-	return <Content />
+	return (
+		<ResumeBuilder />
+	)
 }
 
 export default App
