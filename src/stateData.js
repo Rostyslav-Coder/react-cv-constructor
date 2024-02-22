@@ -20,6 +20,24 @@ const stateData = {
 		result: '',
 		years: '',
 	}],
+	experienceData: [{
+		position: '',
+		organization: '',
+		responsibilities: '',
+		years: '',
+	}],
+	hobbyData: {
+		hobbyText: '',
+	},
+	contactData: {
+		location: '',
+		viber: '',
+		telegram: '',
+		whatsApp: '',
+		email: '',
+		gitHub: '',
+		linkedIn: '',
+	}
 }
 
 export default stateData;

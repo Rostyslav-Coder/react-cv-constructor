@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 
-const Preview = ({ about, summary, skills, image, education }) => {
+const Preview = ({ about, summary, skills, image, education, experience, hobby, contact }) => {
 	return (
 		<div className="preview">
 			<div>
@@ -26,7 +26,6 @@ const Preview = ({ about, summary, skills, image, education }) => {
 					)
 				})}
 			</div>
-
 			<div>
 				<h2>EDUCATION</h2>
 				<hr />
@@ -42,7 +41,36 @@ const Preview = ({ about, summary, skills, image, education }) => {
 				})}
 			</div>
 			<div>
+				<h2>EXPERIENCE</h2>
+				<hr />
+				{experience.map((exp, index) => {
+					return (
+						<div key={index}>
+							<p>{exp.position && exp.organization ? `${exp.position} at the ${exp.organization}` : exp.position || exp.organization}</p>
+							<p>{exp.responsibilities}</p>
+							<p>{exp.years}</p>
+						</div>
+					)
+				})}
+			</div>
+			<div>
+				<h2>HOBBY</h2>
+				<hr />
+				<p>{hobby.hobbyText}</p>
+			</div>
+			<div>
 				{image && <img src={image} alt='User upload' />}
+			</div>
+			<div>
+				<h2>CONTACT</h2>
+				<hr />
+				<p>{contact.location}</p>
+				<p>{contact.viber}</p>
+				<p>{contact.telegram}</p>
+				<p>{contact.whatsApp}</p>
+				<p>{contact.email}</p>
+				<p>{contact.gitHub}</p>
+				<p>{contact.linkedIn}</p>
 			</div>
 		</div>
 	)
@@ -53,7 +81,10 @@ Preview.propTypes = {
 	summary: PropTypes.object,
 	skills: PropTypes.array,
 	education: PropTypes.array,
+	experience: PropTypes.array,
+	hobby: PropTypes.object,
 	image: PropTypes.string,
+	contact: PropTypes.object,
 }
 
 export default Preview;
