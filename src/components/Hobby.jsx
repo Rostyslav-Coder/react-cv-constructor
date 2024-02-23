@@ -12,7 +12,7 @@ const Hobby = ({ hobby, setHobby, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='hobby' onClick={onOpen}>
+		<div className={`hobby component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>HOBBY</h2>
 			{isOpen && (
 				<>

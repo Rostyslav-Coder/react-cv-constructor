@@ -33,7 +33,7 @@ const About = ({ about, setAbout, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='about' onClick={onOpen}>
+		<div className={`about component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>ABOUT</h2>
 			{isOpen && (
 				<>

@@ -40,7 +40,7 @@ const Languages = ({ languages, setLanguages, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='languages' onClick={onOpen}>
+		<div className={`languages component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>LANGUAGES</h2>
 			{isOpen && (
 				<>
@@ -52,7 +52,7 @@ const Languages = ({ languages, setLanguages, isOpen, onOpen }) => {
 						<p>Add Your Level:</p>
 						<input type="text" value={tempLanguages.level} onChange={(e) => handleLanguagesLevelChange(e, 'level')} />
 					</div>
-					<div>
+					<div className='button__box'>
 						<button onClick={handleAddLanguages}>Add New</button>
 						<button onClick={undoLastLanguage}>Undo Last Input</button>
 					</div>

@@ -19,7 +19,7 @@ const ImageUpload = ({ setImage, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className="image" onClick={onOpen}>
+		<div className={`image component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>IMAGE UPLOAD</h2>
 			{isOpen && (
 				<input type="file" accept="public/image/*" onChange={handleImageUpload} />

@@ -37,7 +37,7 @@ const Experience = ({ experience, setExperience, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='experience' onClick={onOpen}>
+		<div className={`experience component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>EXPERIENCE</h2>
 			{isOpen && (
 				<>
@@ -57,7 +57,7 @@ const Experience = ({ experience, setExperience, isOpen, onOpen }) => {
 						<p>Add your years:</p>
 						<input value={tempExperience.years} onChange={(e) => handleInputChange(e, 'years')} />
 					</div>
-					<div>
+					<div className='button__box'>
 						<button onClick={handleAddExperience}>Add new</button>
 						<button onClick={undoLastExperience}>Undo last input</button>
 					</div>

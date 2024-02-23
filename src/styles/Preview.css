@@ -1,0 +1,43 @@
+.preview {
+	width: 73%;
+	background-color: #353C3F;
+	padding: 2rem;
+	border: 2px solid #dedede;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.main__side {
+	width: 74%;
+}
+
+.aside {
+	width: 24%;
+}
+
+.preview hr {
+	margin: 0.3rem 0;
+}
+
+.element {
+	margin-top: 5vh;
+}
+
+.element p {
+	text-align: justify;
+}
+
+.skill__box {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.skill__img {
+	/* width: 1.2rem; */
+	height: 1.1rem;
+}
+
+.skill__text {
+	font-size: 1rem;
+}

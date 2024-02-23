@@ -54,7 +54,7 @@ const Contacts = ({ contact, setContact, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='contact' onClick={onOpen}>
+		<div className={`contacts component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>CONTACTS</h2>
 			{isOpen && (
 				<>

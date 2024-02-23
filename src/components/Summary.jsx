@@ -12,7 +12,7 @@ const Summary = ({ summary, setSummary, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='summary' onClick={onOpen}>
+		<div className={`summary component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>SUMMARY</h2>
 			{isOpen && (
 				<>

@@ -37,7 +37,7 @@ const Educations = ({ education, setEducation, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='education' onClick={onOpen}>
+		<div className={`educations component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>EDUCATION</h2>
 			{isOpen && (
 				<>
@@ -57,7 +57,7 @@ const Educations = ({ education, setEducation, isOpen, onOpen }) => {
 						<p>Add your years:</p>
 						<input value={tempEducation.years} onChange={(e) => handleInputChange(e, 'years')} />
 					</div>
-					<div>
+					<div className='button__box'>
 						<button onClick={handleAddEducation}>Add new</button>
 						<button onClick={undoLastEducation}>Undo last input</button>
 					</div>

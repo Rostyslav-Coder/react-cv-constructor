@@ -39,14 +39,18 @@ const Skills = ({ skills, setSkills, isOpen, onOpen }) => {
 	};
 
 	return (
-		<div className='skill__item' onClick={onOpen}>
+		<div className={`skills component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>SKILLS</h2>
 			{isOpen && (
 				<>
-					<p>Add your skill:</p>
-					<input value={tempSkills.skill} onChange={(e) => handleInputChange(e, 'skill')} />
-					<button onClick={handleAddSkill}>Add new</button>
-					<button onClick={undoLastSkill}>Undo last input</button>
+					<div>
+						<p>Add your skill:</p>
+						<input value={tempSkills.skill} onChange={(e) => handleInputChange(e, 'skill')} />
+					</div>
+					<div className='button__box'>
+						<button onClick={handleAddSkill}>Add new</button>
+						<button onClick={undoLastSkill}>Undo last input</button>
+					</div>
 				</>
 			)}
 		</div>

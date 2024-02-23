@@ -24,7 +24,7 @@ const ResumeBuilder = () => {
 	const [image, setImage] = useState(null);
 	const [contact, setContact] = useState(stateData.contactData);
 	const [languages, setLanguages] = useState(stateData.languageData);
-	const [openComponent, setOpenComponent] = useState(null);
+	const [openComponent, setOpenComponent] = useState('About');
 
 	const handleOpen = (ComponentName) => {
 		setOpenComponent(ComponentName);
