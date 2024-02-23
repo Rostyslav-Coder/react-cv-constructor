@@ -1,85 +1,89 @@
-// About Module
+// ABOUT COMPONENT
 
 import PropTypes from 'prop-types';
 import '../styles/About.css';
 
-const About = ({ about, setAbout }) => {
-
-	function handleAboutFirstnameChange(e) {
+const About = ({ about, setAbout, isOpen, onOpen }) => {
+	const handleAboutFirstnameChange = (e) => {
 		setAbout({
 			...about,
-			firstName: e.target.value
-		})
-	}
+			firstName: e.target.value,
+		});
+	};
 
-	function handleAboutLastnameChange(e) {
+	const handleAboutLastnameChange = (e) => {
 		setAbout({
 			...about,
-			lastName: e.target.value
-		})
-	}
+			lastName: e.target.value,
+		});
+	};
 
-	function handleAboutProfessionChange(e) {
+	const handleAboutProfessionChange = (e) => {
 		setAbout({
 			...about,
-			profession: e.target.value
-		})
-	}
+			profession: e.target.value,
+		});
+	};
 
-	function handleAboutLevelChange(e) {
+	const handleAboutLevelChange = (e) => {
 		setAbout({
 			...about,
-			level: e.target.value
-		})
-	}
+			level: e.target.value,
+		});
+	};
 
 	return (
-		<div className='about'>
+		<div className='about' onClick={onOpen}>
+			<h2>ABOUT</h2>
+			{isOpen && (
+				<>
+					<div>
+						<p>Add Your Firstname:</p>
+						<input
+							type="text"
+							value={about.firstName}
+							onChange={handleAboutFirstnameChange}
+						/>
+					</div>
 
-			<div>
-				Enter Your Firstname:
-				<input
-					type="text"
-					value={about.firstName}
-					onChange={handleAboutFirstnameChange}
-				/>
-			</div>
+					<div>
+						<p>Add Your Lastname:</p>
+						<input
+							type="text"
+							value={about.lastName}
+							onChange={handleAboutLastnameChange}
+						/>
+					</div>
 
-			<div>
-				Enter Your Lastname:
-				<input
-					type="text"
-					value={about.lastName}
-					onChange={handleAboutLastnameChange}
-				/>
-			</div>
+					<div>
+						<p>Add Your Profession:</p>
+						<input
+							type="text"
+							value={about.profession}
+							onChange={handleAboutProfessionChange}
+						/>
+					</div>
 
-			<div>
-				Select Your Profession:
-				<input
-					type="text"
-					value={about.profession}
-					onChange={handleAboutProfessionChange}
-				/>
-			</div>
-
-			<div>
-				Choose Your Professional Level:
-				<select value={about.level} onChange={handleAboutLevelChange}>
-					<option value=""></option>
-					<option value="Junior">Junior</option>
-					<option value="Middle">Middle</option>
-					<option value="Senior">Senior</option>
-				</select>
-			</div>
-
+					<div>
+						<p>Choose Your Professional Level:</p>
+						<select value={about.level} onChange={handleAboutLevelChange}>
+							<option value=""></option>
+							<option value="Junior">Junior</option>
+							<option value="Middle">Middle</option>
+							<option value="Senior">Senior</option>
+						</select>
+					</div>
+				</>
+			)}
 		</div>
-	)
-}
+	);
+};
 
 About.propTypes = {
 	about: PropTypes.object.isRequired,
-	setAbout: PropTypes.func.isRequired
-}
+	setAbout: PropTypes.func.isRequired,
+	isOpen: PropTypes.bool.isRequired,
+	onOpen: PropTypes.func.isRequired,
+};
 
 export default About;

@@ -1,9 +1,10 @@
-// Languages Component
+// LANGUAGES COMPONENT
 
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+import '../styles/Languages.css';
 
-const Languages = ({ languages, setLanguages }) => {
+const Languages = ({ languages, setLanguages, isOpen, onOpen }) => {
 	const [tempLanguages, setTempLanguages] = useState({
 		name: '',
 		level: '',
@@ -39,13 +40,24 @@ const Languages = ({ languages, setLanguages }) => {
 	};
 
 	return (
-		<div className='languages'>
-			<p>Add Your Language:</p>
-			<input type="text" value={tempLanguages.name} onChange={(e) => handleLanguagesNameChange(e, 'name')} />
-			<p>Add Your Level:</p>
-			<input type="text" value={tempLanguages.level} onChange={(e) => handleLanguagesLevelChange(e, 'level')} />
-			<button onClick={handleAddLanguages}>Add New</button>
-			<button onClick={undoLastLanguage}>Undo Last Input</button>
+		<div className='languages' onClick={onOpen}>
+			<h2>LANGUAGES</h2>
+			{isOpen && (
+				<>
+					<div>
+						<p>Add Your Language:</p>
+						<input type="text" value={tempLanguages.name} onChange={(e) => handleLanguagesNameChange(e, 'name')} />
+					</div>
+					<div>
+						<p>Add Your Level:</p>
+						<input type="text" value={tempLanguages.level} onChange={(e) => handleLanguagesLevelChange(e, 'level')} />
+					</div>
+					<div>
+						<button onClick={handleAddLanguages}>Add New</button>
+						<button onClick={undoLastLanguage}>Undo Last Input</button>
+					</div>
+				</>
+			)}
 		</div>
 	);
 };
@@ -53,6 +65,8 @@ const Languages = ({ languages, setLanguages }) => {
 Languages.propTypes = {
 	languages: PropTypes.array.isRequired,
 	setLanguages: PropTypes.func.isRequired,
+	isOpen: PropTypes.bool.isRequired,
+	onOpen: PropTypes.func.isRequired,
 };
 
 export default Languages;

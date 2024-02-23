@@ -1,20 +1,18 @@
-//  ResumeBuilder Module
+//  ResumeBuilder Component
 
 import { useState } from 'react';
 import stateData from '../stateData';
 import About from './About';
 import Summary from './Summary';
 import Skills from './Skills';
-import Education from './EducationList';
+import Educations from './Educations';
 import Experience from './Experience';
 import Hobby from './Hobby';
 import ImageUpload from './ImageUpload';
-import Contact from './Contact';
+import Contacts from './Contacts';
 import Languages from './Languages';
 import Preview from './Preview';
 import '../styles/ResumeBuilder.css';
-
-
 
 const ResumeBuilder = () => {
 	const [about, setAbout] = useState(stateData.aboutData);
@@ -26,19 +24,68 @@ const ResumeBuilder = () => {
 	const [image, setImage] = useState(null);
 	const [contact, setContact] = useState(stateData.contactData);
 	const [languages, setLanguages] = useState(stateData.languageData);
+	const [openComponent, setOpenComponent] = useState(null);
+
+	const handleOpen = (ComponentName) => {
+		setOpenComponent(ComponentName);
+	};
 
 	return (
 		<div className='resumeBuilder'>
 			<div className='dashboard'>
-				<About about={about} setAbout={setAbout} />
-				<Summary summary={summary} setSummary={setSummary} />
-				<Skills skills={skills} setSkills={setSkills} />
-				<Education education={education} setEducation={setEducation} />
-				<Experience experience={experience} setExperience={setExperience} />
-				<Hobby hobby={hobby} setHobby={setHobby} />
-				<ImageUpload setImage={setImage} />
-				<Contact contact={contact} setContact={setContact} />
-				<Languages languages={languages} setLanguages={setLanguages} />
+				<About
+					about={about}
+					setAbout={setAbout}
+					isOpen={openComponent === 'About'}
+					onOpen={() => handleOpen('About')}
+				/>
+				<Summary
+					summary={summary}
+					setSummary={setSummary}
+					isOpen={openComponent === 'Summary'}
+					onOpen={() => handleOpen('Summary')}
+				/>
+				<Skills
+					skills={skills}
+					setSkills={setSkills}
+					isOpen={openComponent === 'Skills'}
+					onOpen={() => handleOpen('Skills')}
+				/>
+				<Educations
+					education={education}
+					setEducation={setEducation}
+					isOpen={openComponent === 'Education'}
+					onOpen={() => handleOpen('Education')}
+				/>
+				<Experience
+					experience={experience}
+					setExperience={setExperience}
+					isOpen={openComponent === 'Experience'}
+					onOpen={() => handleOpen('Experience')}
+				/>
+				<Hobby
+					hobby={hobby}
+					setHobby={setHobby}
+					isOpen={openComponent === 'Hobby'}
+					onOpen={() => handleOpen('Hobby')}
+				/>
+				<ImageUpload
+					setImage={setImage}
+					isOpen={openComponent === 'ImageUpload'}
+					onOpen={() => handleOpen('ImageUpload')}
+				/>
+				<Contacts
+					contact={contact}
+					setContact={setContact}
+					isOpen={openComponent === 'Contact'}
+					onOpen={() => handleOpen('Contact')}
+				/>
+				<Languages
+					languages={languages}
+					setLanguages={setLanguages}
+					isOpen={openComponent === 'Languages'}
+					onOpen={() => handleOpen('Languages')}
+				/>
 			</div>
 			<Preview
 				about={about}

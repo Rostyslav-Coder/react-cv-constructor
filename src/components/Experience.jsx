@@ -1,9 +1,10 @@
-// Experience Component
+// EXPERIENCE COMPONENT
 
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
+import '../styles/Experience.css';
 
-const Experience = ({ experience, setExperience }) => {
+const Experience = ({ experience, setExperience, isOpen, onOpen }) => {
 	const [tempExperience, setTempExperience] = useState({
 		position: '',
 		organization: '',
@@ -36,17 +37,32 @@ const Experience = ({ experience, setExperience }) => {
 	};
 
 	return (
-		<div className='experience'>
-			<p>Add your position:</p>
-			<input value={tempExperience.position} onChange={(e) => handleInputChange(e, 'position')} />
-			<p>Add your organization:</p>
-			<input value={tempExperience.organization} onChange={(e) => handleInputChange(e, 'organization')} />
-			<p>Add your responsibilities:</p>
-			<input value={tempExperience.responsibilities} onChange={(e) => handleInputChange(e, 'responsibilities')} />
-			<p>Add your years:</p>
-			<input value={tempExperience.years} onChange={(e) => handleInputChange(e, 'years')} />
-			<button onClick={handleAddExperience}>Add new</button>
-			<button onClick={undoLastExperience}>Undo last input</button>
+		<div className='experience' onClick={onOpen}>
+			<h2>EXPERIENCE</h2>
+			{isOpen && (
+				<>
+					<div>
+						<p>Add your position:</p>
+						<input value={tempExperience.position} onChange={(e) => handleInputChange(e, 'position')} />
+					</div>
+					<div>
+						<p>Add your organization:</p>
+						<input value={tempExperience.organization} onChange={(e) => handleInputChange(e, 'organization')} />
+					</div>
+					<div>
+						<p>Add your responsibilities:</p>
+						<input value={tempExperience.responsibilities} onChange={(e) => handleInputChange(e, 'responsibilities')} />
+					</div>
+					<div>
+						<p>Add your years:</p>
+						<input value={tempExperience.years} onChange={(e) => handleInputChange(e, 'years')} />
+					</div>
+					<div>
+						<button onClick={handleAddExperience}>Add new</button>
+						<button onClick={undoLastExperience}>Undo last input</button>
+					</div>
+				</>
+			)}
 		</div>
 	);
 };
@@ -54,6 +70,8 @@ const Experience = ({ experience, setExperience }) => {
 Experience.propTypes = {
 	experience: PropTypes.array.isRequired,
 	setExperience: PropTypes.func.isRequired,
+	isOpen: PropTypes.bool.isRequired,
+	onOpen: PropTypes.func.isRequired,
 };
 
 export default Experience;

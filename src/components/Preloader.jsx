@@ -1,4 +1,4 @@
-// Preloader Module
+// Preloader Component
 
 import PropTypes from 'prop-types';
 import preloderData from '../content';

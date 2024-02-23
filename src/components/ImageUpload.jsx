@@ -1,8 +1,10 @@
-// ImageUpload Component
+// IMAGEUPLOAD COMPONENT
 
 import PropTypes from 'prop-types';
+import '../styles/ImageUpload.css';
+// 
 
-const ImageUpload = ({ setImage }) => {
+const ImageUpload = ({ setImage, isOpen, onOpen }) => {
 	const handleImageUpload = (e) => {
 		const file = e.target.files[0];
 		const reader = new FileReader();
@@ -17,14 +19,19 @@ const ImageUpload = ({ setImage }) => {
 	};
 
 	return (
-		<div className="image">
-			<input type="file" accept="public/image/*" onChange={handleImageUpload} />
+		<div className="image" onClick={onOpen}>
+			<h2>IMAGE UPLOAD</h2>
+			{isOpen && (
+				<input type="file" accept="public/image/*" onChange={handleImageUpload} />
+			)}
 		</div>
 	);
 };
 
 ImageUpload.propTypes = {
 	setImage: PropTypes.func.isRequired,
-}
+	isOpen: PropTypes.bool.isRequired,
+	onOpen: PropTypes.func.isRequired,
+};
 
 export default ImageUpload;
