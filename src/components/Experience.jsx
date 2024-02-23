@@ -36,7 +36,7 @@ const Experience = ({ experience, setExperience }) => {
 	};
 
 	return (
-		<div className='experience__item'>
+		<div className='experience'>
 			<p>Add your position:</p>
 			<input value={tempExperience.position} onChange={(e) => handleInputChange(e, 'position')} />
 			<p>Add your organization:</p>

@@ -37,7 +37,11 @@ const stateData = {
 		email: '',
 		gitHub: '',
 		linkedIn: '',
-	}
+	},
+	languageData: [{
+		name: '',
+		level: '',
+	}],
 }
 
 export default stateData;

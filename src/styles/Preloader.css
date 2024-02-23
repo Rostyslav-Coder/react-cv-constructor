@@ -1,33 +1,44 @@
-/* Preloader Styles */
+/* Preloader Component Styles Modyle */
+@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
+/* ============ Preloader Styles ============ */
 .preloader__wrapper {
-	width: 80%;
-	margin: 10vh auto;
+	width: 90%;
+	margin: 5vh auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	gap: 3vh;
+	gap: 1.2vh;
 }
 
-.preloader__title-main,
-.preloader__title {
+.preloader__title-main {
+	margin-top: 0.5rem;
 	color: #f90;
 	font-family: 'Orbitron', serif;
-	font-size: 2.4rem;
-	line-height: 3rem;
+	font-size: 2.2rem;
+	line-height: 2.8rem;
 	font-weight: 900;
 	text-transform: uppercase;
 }
 
 .preloader__title {
+	margin-top: 0.5rem;
 	color: #fff;
-	font-size: 1.8rem;
+	font-family: 'Orbitron', serif;
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
 }
 
+/* ============ Preloader Button Styles ============ */
 .preloader__button {
 	width: 80%;
-	margin: 0 auto;
+	margin-top: 0.5rem;
+	margin: 0.5rem auto 0;
 	padding: 0.5rem;
 	background-color: #f90;
 	border: none;
@@ -38,4 +49,51 @@
 	font-weight: 900;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+
+/* ============ PreloaderCardsGrp Styles ============ */
+.preloader__cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* ============ PreloaderCard Styles ============ */
+.preloader__card {
+	padding: 1.5rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	border: 1px solid #f90;
+	border-radius: 5px;
+}
+
+.card__title {
+	color: #fff;
+	font-family: 'Orbitron', serif;
+	font-size: 1.6rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.card__text {
+	font-size: 1rem;
+	font-weight: 500;
+	text-align: justify;
+}
+
+@media screen and (orientation: landscape) {
+	.preloader__cards {
+		flex-flow: row wrap;
+		align-items: stretch;
+	}
+
+	.preloader__card {
+		width: 47%;
+	}
 }

@@ -10,6 +10,7 @@ import Experience from './Experience';
 import Hobby from './Hobby';
 import ImageUpload from './ImageUpload';
 import Contact from './Contact';
+import Languages from './Languages';
 import Preview from './Preview';
 import '../styles/ResumeBuilder.css';
 
@@ -24,6 +25,7 @@ const ResumeBuilder = () => {
 	const [hobby, setHobby] = useState(stateData.hobbyData);
 	const [image, setImage] = useState(null);
 	const [contact, setContact] = useState(stateData.contactData);
+	const [languages, setLanguages] = useState(stateData.languageData);
 
 	return (
 		<div className='resumeBuilder'>
@@ -36,6 +38,7 @@ const ResumeBuilder = () => {
 				<Hobby hobby={hobby} setHobby={setHobby} />
 				<ImageUpload setImage={setImage} />
 				<Contact contact={contact} setContact={setContact} />
+				<Languages languages={languages} setLanguages={setLanguages} />
 			</div>
 			<Preview
 				about={about}
@@ -46,6 +49,7 @@ const ResumeBuilder = () => {
 				hobby={hobby}
 				image={image}
 				contact={contact}
+				languages={languages}
 			/>
 		</div>
 	);

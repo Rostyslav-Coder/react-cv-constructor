@@ -1,8 +1,34 @@
 // Preloader Module
 
 import PropTypes from 'prop-types';
-import PreloaderCards from './PreloaderCards';
+import preloderData from '../content';
 import '../styles/Preloader.css';
+
+const PreloaderCard = ({ title, text }) => {
+	return (
+		<div className='preloader__card'>
+			<h3 className='card__title'>{title}</h3>
+			<p className='card__text'>{text}</p>
+		</div>
+	);
+};
+
+PreloaderCard.propTypes = {
+	title: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired
+};
+
+const PreloaderCardsGrp = () => {
+	return (
+		<div className='preloader__cards'>
+			{preloderData.map(data => {
+				return (
+					<PreloaderCard key={data.id} {...data} />
+				);
+			})}
+		</div>
+	);
+};
 
 const Preloader = ({ onClick }) => {
 	return (
@@ -19,7 +45,7 @@ const Preloader = ({ onClick }) => {
 			<h2 className='preloader__title'>
 				Why choose us?
 			</h2>
-			<PreloaderCards />
+			<PreloaderCardsGrp />
 			<h2 className='preloader__title'>
 				Start your journey to success right now!
 			</h2>
@@ -30,11 +56,11 @@ const Preloader = ({ onClick }) => {
 				Let`s go!
 			</button>
 		</div >
-	)
-}
+	);
+};
 
 Preloader.propTypes = {
 	onClick: PropTypes.func.isRequired
-}
+};
 
 export default Preloader;

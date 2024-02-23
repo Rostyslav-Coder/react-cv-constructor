@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 
-const Preview = ({ about, summary, skills, image, education, experience, hobby, contact }) => {
+const Preview = ({ about, summary, skills, image, education, experience, hobby, contact, languages }) => {
 	return (
 		<div className="preview">
 			<div>
@@ -72,6 +72,18 @@ const Preview = ({ about, summary, skills, image, education, experience, hobby, 
 				<p>{contact.gitHub}</p>
 				<p>{contact.linkedIn}</p>
 			</div>
+			<div>
+				<h2>LANGUAGES</h2>
+				<hr />
+				{languages.map((lang, index) => {
+					return (
+						<div key={index}>
+							<p>{lang.name}</p>
+							<p>{lang.level}</p>
+						</div>
+					)
+				})}
+			</div>
 		</div>
 	)
 }
@@ -85,6 +97,7 @@ Preview.propTypes = {
 	hobby: PropTypes.object,
 	image: PropTypes.string,
 	contact: PropTypes.object,
+	languages: PropTypes.array,
 }
 
 export default Preview;
