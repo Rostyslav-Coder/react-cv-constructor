@@ -3,9 +3,10 @@
 const skillsImages = {
 	javascript: '../public/images/icons/javaScript.png',
 	react: '../public/images/icons/react.png',
-	'node js': '../public/images/icons/node-js.png',
+	nodejs: '../public/images/icons/node-js.png',
 	html: '../public/images/icons/html.png',
 	css: '../public/images/icons/css.png',
+	figma: '../public/images/icons/figma.png',
 	mongodb: '../public/images/icons/mongodb.png',
 	python: '../public/images/icons/python.png',
 	fastapi: '../public/images/icons/fastapi.png',

@@ -48,8 +48,8 @@ const Skills = ({ skills, setSkills, isOpen, onOpen }) => {
 						<input value={tempSkills.skill} onChange={(e) => handleInputChange(e, 'skill')} />
 					</div>
 					<div className='button__box'>
-						<button onClick={handleAddSkill}>Add new</button>
-						<button onClick={undoLastSkill}>Undo last input</button>
+						<button onClick={handleAddSkill}>Add Skill</button>
+						<button onClick={undoLastSkill}>Undo Last Input</button>
 					</div>
 				</>
 			)}

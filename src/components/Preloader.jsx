@@ -46,12 +46,6 @@ const Preloader = ({ onClick }) => {
 				Why choose us?
 			</h2>
 			<PreloaderCardsGrp />
-			<h2 className='preloader__title'>
-				Start your journey to success right now!
-			</h2>
-			<p>
-				Create your resume today and discover new opportunities. Your future starts here!
-			</p>
 			<button className='preloader__button' onClick={onClick}>
 				Let`s go!
 			</button>

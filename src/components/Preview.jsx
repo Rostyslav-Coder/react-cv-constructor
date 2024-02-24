@@ -19,38 +19,43 @@ const Preview = ({ about, summary, skills, image, education, experience, hobby, 
 				<div className='element preview__skills'>
 					<h2>SKILLS</h2>
 					<hr />
-					{skills.map((skill, index) => {
-						return (
-							<div key={index} className='skill__box'>
-								{skill.imgUrl && <img className='skill__img' src={skill.imgUrl} alt={skill.skill} />}
-								<p className='skill__text'>{skill.skill}</p>
-							</div>
-						)
-					})}
+					<div className='skill__box'>
+						{skills.map((skill, index) => {
+							return (
+								<div key={index} className='skill__item'>
+									{skill.imgUrl && <img className='skill__img' src={skill.imgUrl} alt={skill.skill} />}
+									<p className='skill__text'>{skill.skill}</p>
+								</div>
+							)
+						})}
+					</div>
 				</div>
 				<div className='element preview__education'>
 					<h2>EDUCATION</h2>
 					<hr />
-					{education.map((edu, index) => {
-						return (
-							<div key={index}>
-								<p>{edu.institution}</p>
-								<p>{edu.speciality}</p>
-								<p>{edu.result}</p>
-								<p>{edu.years}</p>
-							</div>
-						)
-					})}
+					<div className='education__box'>
+						{education.map((edu, index) => {
+							return (
+								<div key={index} className='education__item'>
+									<p className='edu__institution'>{edu.institution}</p>
+									<p className='edu__speciality'>{edu.speciality}</p>
+									<p className='edu__result'>{edu.result}</p>
+									<p className='edu__years'>{edu.years}</p>
+								</div>
+							)
+						})}
+					</div>
 				</div>
 				<div className='element preview__experience'>
-					<h2>EXPERIENCE</h2>
+					<h2>WORK EXPERIENCE</h2>
 					<hr />
 					{experience.map((exp, index) => {
 						return (
-							<div key={index}>
-								<p>{exp.position && exp.organization ? `${exp.position} at the ${exp.organization}` : exp.position || exp.organization}</p>
-								<p>{exp.responsibilities}</p>
-								<p>{exp.years}</p>
+							<div className='exp__item' key={index}>
+								<p className='exp__position'>{exp.position}</p>
+								<p className='exp__organization'>{exp.organization}</p>
+								<p className='exp__responsibilities'>{exp.responsibilities}</p>
+								<p className='exp__years'>{exp.years}</p>
 							</div>
 						)
 					})}
@@ -64,27 +69,69 @@ const Preview = ({ about, summary, skills, image, education, experience, hobby, 
 
 			<div className="aside">
 				<div className='element preview__image'>
-					{image && <img src={image} alt='User upload' />}
+					{image && <img className='image' src={image} alt='User upload' />}
 				</div>
 				<div className='element preview__contact'>
 					<h2>CONTACT</h2>
 					<hr />
-					<p>{contact.location}</p>
-					<p>{contact.viber}</p>
-					<p>{contact.telegram}</p>
-					<p>{contact.whatsApp}</p>
-					<p>{contact.email}</p>
-					<p>{contact.gitHub}</p>
-					<p>{contact.linkedIn}</p>
+					{
+						contact.location &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/location.png' /> Location:
+							<p className='contact__text'>{contact.location}</p>
+						</div>
+					}
+					{
+						contact.viber &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/viber.png' /> Viber:
+							<p className='contact__text'>{contact.viber}</p>
+						</div>
+					}
+					{
+						contact.telegram &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/telegram.png' /> Telegram:
+							<p className='contact__text'>{contact.telegram}</p>
+						</div>
+					}
+					{
+						contact.whatsApp &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/whatsapp.png' /> WhatsApp:
+							<p className='contact__text'>{contact.whatsApp}</p>
+						</div>
+					}
+					{
+						contact.email &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/email.png' /> Email:
+							<p className='contact__text'>{contact.email}</p>
+						</div>
+					}
+					{
+						contact.gitHub &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/github_.png' /> GitHub:
+							<p className='contact__text'>{contact.gitHub}</p>
+						</div>
+					}
+					{
+						contact.linkedIn &&
+						<div>
+							<img className='contact__icon' src='../public/images/icons/linkedin.png' /> LinkedIn:
+							<p className='contact__text'>{contact.linkedIn}</p>
+						</div>
+					}
 				</div>
 				<div className='element preview__languages'>
 					<h2>LANGUAGES</h2>
 					<hr />
 					{languages.map((lang, index) => {
 						return (
-							<div key={index}>
-								<p>{lang.name}</p>
-								<p>{lang.level}</p>
+							<div className='language__box' key={index}>
+								<p className='language__name'>{lang.name}</p>
+								<p className='language__level'>{lang.level}</p>
 							</div>
 						)
 					})}
