@@ -56,3 +56,24 @@
 .component button {
 	width: 47%;
 }
+
+.pdf__renderer,
+.copy__link {
+	padding: 0.3rem 0;
+	border: 2px solid #dedede;
+	border-radius: 5px;
+	color: #fff;
+	font-family: 'Orbitron', serif;
+	font-weight: 900;
+	font-size: 1.5rem;
+	background-color: #f90;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.copy__link {
+	font-size: 0.75rem;
+	text-decoration: none;
+	padding: 0.75rem 0;
+	text-align: center;
+}

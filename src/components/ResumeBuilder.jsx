@@ -1,6 +1,8 @@
 //  ResumeBuilder Component
 
 import { useState } from 'react';
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 import stateData from '../stateData';
 import About from './About';
 import Summary from './Summary';
@@ -14,6 +16,24 @@ import Languages from './Languages';
 import Preview from './Preview';
 import '../styles/ResumeBuilder.css';
 
+const formatFileName = (str) => {
+	return str.replace(/\s+/g, '_');
+}
+
+const pdfRenderer = (about) => {
+	const input = document.querySelector(".preview");
+	html2canvas(input).then(canvas => {
+		const imgData = canvas.toDataURL('image/png');
+		const pdf = new jsPDF('p', 'mm', 'a4'); // set PDF to A4 size
+		const imgProps = pdf.getImageProperties(imgData);
+		const pdfWidth = pdf.internal.pageSize.getWidth();
+		const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+		pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+		const fileName = formatFileName(`${about.firstName} ${about.lastName} ${about.level} ${about.profession} CV.pdf`);
+		pdf.save(fileName);
+	});
+}
+
 const ResumeBuilder = () => {
 	const [about, setAbout] = useState(stateData.aboutData);
 	const [summary, setSummary] = useState(stateData.summaryData);
@@ -25,7 +45,6 @@ const ResumeBuilder = () => {
 	const [contact, setContact] = useState(stateData.contactData);
 	const [languages, setLanguages] = useState(stateData.languageData);
 	const [openComponent, setOpenComponent] = useState('About');
-
 	const handleOpen = (ComponentName) => {
 		setOpenComponent(ComponentName);
 	};
@@ -86,6 +105,8 @@ const ResumeBuilder = () => {
 					isOpen={openComponent === 'Languages'}
 					onOpen={() => handleOpen('Languages')}
 				/>
+				<button className='pdf__renderer' onClick={() => pdfRenderer(about)}>Save To PDF</button>
+				<a className='copy__link' href="https://www.linkedin.com/in/rostyslav-putnikov-76484926a/" target="_blank" rel="noopener noreferrer">2024 &copy; Rostyslav-Coder</a>
 			</div>
 			<Preview
 				about={about}
