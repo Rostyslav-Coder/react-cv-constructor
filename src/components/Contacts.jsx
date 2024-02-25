@@ -6,52 +6,58 @@ const Contacts = ({ contact, setContact, isOpen, onOpen }) => {
 	const handleContactLocatinChange = (e) => {
 		setContact({
 			...contact,
-			location: e.target.value
+			location: e.target.value,
 		});
 	};
 
 	const handleContactViberChange = (e) => {
 		setContact({
 			...contact,
-			viber: e.target.value
+			viber: e.target.value,
 		});
 	};
 
 	const handleContactTelegramChange = (e) => {
 		setContact({
 			...contact,
-			telegram: e.target.value
+			telegram: e.target.value,
 		});
 	};
 
 	const handleContactWhatsAppChange = (e) => {
 		setContact({
 			...contact,
-			whatsApp: e.target.value
+			whatsApp: e.target.value,
 		});
 	};
 
 	const handleContactEmailChange = (e) => {
 		setContact({
 			...contact,
-			email: e.target.value
+			email: e.target.value,
 		});
 	};
 
 	const handleContactGitHubChange = (e) => {
 		setContact({
 			...contact,
-			gitHub: e.target.value
+			gitHub: e.target.value,
 		});
 	};
 
 	const handleContactLinkedInChange = (e) => {
 		setContact({
 			...contact,
-			linkedIn: e.target.value
+			linkedIn: e.target.value,
 		});
 	};
 
+	const handleContactWebPageChange = (e) => {
+		setContact({
+			...contact,
+			webPage: e.target.value,
+		})
+	}
 	return (
 		<div className={`contacts component component__${isOpen ? 'open' : 'closed'}`} onClick={onOpen}>
 			<h2>CONTACTS</h2>
@@ -84,6 +90,10 @@ const Contacts = ({ contact, setContact, isOpen, onOpen }) => {
 					<div>
 						<p>Add Your LinkedIn Address:</p>
 						<input type="url" value={contact.linkedIn} onChange={handleContactLinkedInChange} />
+					</div>
+					<div>
+						<p>Add Your Web Page Address:</p>
+						<input type="url" value={contact.webPage} onChange={handleContactWebPageChange} />
 					</div>
 				</>
 			)}

@@ -1,14 +1,14 @@
 // Preview Component
 
 import PropTypes from 'prop-types';
-import location from '../public/images/icons/location.png';
-import viber from '../public/images/icons/viber.png';
-import telegram from '../public/images/icons/telegram.png';
-import whatsApp from '../public/images/icons/whatsapp.png';
-import email from '../public/images/icons/email.png';
-import gitHub from '../public/images/icons/github_.png';
-import linkedIn from '../public/images/icons/linkedin.png';
-import webPage from '../public/images/icons/webpage.png';
+import location from '../../public/images/icons/location.png';
+import viber from '../../public/images/icons/viber.png';
+import telegram from '../../public/images/icons/telegram.png';
+import whatsApp from '../../public/images/icons/whatsapp.png';
+import email from '../../public/images/icons/email.png';
+import gitHub from '../../public/images/icons/github_.png';
+import linkedIn from '../../public/images/icons/linkedin.png';
+import webPage from '../../public/images/icons/webpage.png';
 import '../styles/Preview.css';
 
 const Preview = ({ about, summary, skills, image, education, experience, hobby, contact, languages }) => {

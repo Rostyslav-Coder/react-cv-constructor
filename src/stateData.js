@@ -37,6 +37,7 @@ const stateData = {
 		email: '',
 		gitHub: '',
 		linkedIn: '',
+		webPage: '',
 	},
 	languageData: [{
 		name: '',
