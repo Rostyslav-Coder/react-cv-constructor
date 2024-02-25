@@ -1,36 +1,70 @@
 // skillImages Module
+import javascript from '../public/images/icons/javaScript.png';
+import react from '../public/images/icons/react.png';
+import nodejs from '../public/images/icons/node-js.png';
+import npm from '../public/images/icons/npm.png';
+import html from '../public/images/icons/html.png';
+import css from '../public/images/icons/css.png';
+import figma from '../public/images/icons/figma.png';
+import mongodb from '../public/images/icons/mongodb.png';
+import python from '../public/images/icons/python.png';
+import fastapi from '../public/images/icons/fastapi.png';
+import django from '../public/images/icons/django.png';
+import postgresql from '../public/images/icons/postgresql.png';
+import celery from '../public/images/icons/celery.png';
+import redis from '../public/images/icons/redis.png';
+import java from '../public/images/icons/java.png';
+import spring from '../public/images/icons/spring.png';
+import php from '../public/images/icons/php.png';
+import laravel from '../public/images/icons/laravel.png';
+import symfony from '../public/images/icons/symfony.png'; ``
+import mysql from '../public/images/icons/mysql.png';
+import cSharp from '../public/images/icons/c-sharp.png';
+import aspNet from '../public/images/icons/asp.png';
+import ruby from '../public/images/icons/ruby.png';
+import rubyOnRails from '../public/images/icons/ruby_on_rails.png';
+import sinatra from '../public/images/icons/sinatra.png';
+import swift from '../public/images/icons/swift.png';
+import kotlin from '../public/images/icons/kotlin.png';
+import git from '../public/images/icons/git.png';
+import github from '../public/images/icons/github.png';
+import docker from '../public/images/icons/docker.png';
+import postman from '../public/images/icons/postman.png';
+import swagger from '../public/images/icons/swagger.png';
 
 const skillsImages = {
-	javascript: '../public/images/icons/javaScript.png',
-	react: '../public/images/icons/react.png',
-	nodejs: '../public/images/icons/node-js.png',
-	html: '../public/images/icons/html.png',
-	css: '../public/images/icons/css.png',
-	figma: '../public/images/icons/figma.png',
-	mongodb: '../public/images/icons/mongodb.png',
-	python: '../public/images/icons/python.png',
-	fastapi: '../public/images/icons/fastapi.png',
-	django: '../public/images/icons/django.png',
-	postgresql: '../public/images/icons/postgresql.png',
-	redis: '../public/images/icons/redis.png',
-	java: '../public/images/icons/java.png',
-	spring: '../public/images/icons/spring.png',
-	php: '../public/images/icons/php.png',
-	laravel: '../public/images/icons/laravel.png',
-	symfony: '../public/images/icons/symfony.png',
-	mysql: '../public/images/icons/mysql.png',
-	'c#': '../public/images/icons/c-sharp.png',
-	'asp.net': '../public/images/icons/asp.png',
-	ruby: '../public/images/icons/ruby.png',
-	'ruby on rails': '../public/images/icons/ruby_on_rails.png',
-	sinatra: '../public/images/icons/sinatra.png',
-	swift: '../public/images/icons/swift.png',
-	kotlin: '../public/images/icons/kotlin.png',
-	git: '../public/images/icons/git.png',
-	github: '../public/images/icons/github.png',
-	docker: '../public/images/icons/docker.png',
-	postman: '../public/images/icons/postman.png',
-	swagger: '../public/images/icons/swagger.png',
+	javascript,
+	react,
+	nodejs,
+	npm,
+	html,
+	css,
+	figma,
+	mongodb,
+	python,
+	fastapi,
+	django,
+	postgresql,
+	celery,
+	redis,
+	java,
+	spring,
+	php,
+	laravel,
+	symfony,
+	mysql,
+	'c#': cSharp,
+	'asp.net': aspNet,
+	ruby,
+	'ruby on rails': rubyOnRails,
+	sinatra,
+	swift,
+	kotlin,
+	git,
+	github,
+	docker,
+	postman,
+	swagger,
 };
 
 export default skillsImages;
