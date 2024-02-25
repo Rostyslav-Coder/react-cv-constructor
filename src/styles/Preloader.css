@@ -1,7 +1,4 @@
 /* Preloader Component Styles Modyle */
-@import url(https://fonts.googleapis.com/css?family=Orbitron:regular,500,600,700,800,900);
-@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
-
 /* ============ Preloader Styles ============ */
 .preloader__wrapper {
 	width: 90%;
