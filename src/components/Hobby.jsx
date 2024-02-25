@@ -1,7 +1,6 @@
 // HOBBY COMPONENT
 
 import PropTypes from 'prop-types';
-import '../styles/Hobby.css';
 
 const Hobby = ({ hobby, setHobby, isOpen, onOpen }) => {
 	const handleHobbyChange = (e) => {

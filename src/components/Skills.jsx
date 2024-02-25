@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import skillsImages from '../skillImages.js';
-import '../styles/Skills.css';
 
 const Skills = ({ skills, setSkills, isOpen, onOpen }) => {
 	const [tempSkills, setTempSkills] = useState({

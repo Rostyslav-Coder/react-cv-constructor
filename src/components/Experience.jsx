@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/Experience.css';
 
 const Experience = ({ experience, setExperience, isOpen, onOpen }) => {
 	const [tempExperience, setTempExperience] = useState({

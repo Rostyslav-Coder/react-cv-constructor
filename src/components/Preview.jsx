@@ -1,6 +1,14 @@
 // Preview Component
 
 import PropTypes from 'prop-types';
+import location from '../public/images/icons/location.png';
+import viber from '../public/images/icons/viber.png';
+import telegram from '../public/images/icons/telegram.png';
+import whatsApp from '../public/images/icons/whatsapp.png';
+import email from '../public/images/icons/email.png';
+import gitHub from '../public/images/icons/github_.png';
+import linkedIn from '../public/images/icons/linkedin.png';
+import webPage from '../public/images/icons/webpage.png';
 import '../styles/Preview.css';
 
 const Preview = ({ about, summary, skills, image, education, experience, hobby, contact, languages }) => {
@@ -77,50 +85,57 @@ const Preview = ({ about, summary, skills, image, education, experience, hobby, 
 					{
 						contact.location &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/location.png' /> Location:
+							<img className='contact__icon' src={location} /> Location:
 							<p className='contact__text'>{contact.location}</p>
 						</div>
 					}
 					{
 						contact.viber &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/viber.png' /> Viber:
+							<img className='contact__icon' src={viber} /> Viber:
 							<p className='contact__text'>{contact.viber}</p>
 						</div>
 					}
 					{
 						contact.telegram &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/telegram.png' /> Telegram:
+							<img className='contact__icon' src={telegram} /> Telegram:
 							<p className='contact__text'>{contact.telegram}</p>
 						</div>
 					}
 					{
 						contact.whatsApp &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/whatsapp.png' /> WhatsApp:
+							<img className='contact__icon' src={whatsApp} /> WhatsApp:
 							<p className='contact__text'>{contact.whatsApp}</p>
 						</div>
 					}
 					{
 						contact.email &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/email.png' /> Email:
+							<img className='contact__icon' src={email} /> Email:
 							<p className='contact__text'>{contact.email}</p>
 						</div>
 					}
 					{
 						contact.gitHub &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/github_.png' /> GitHub:
+							<img className='contact__icon' src={gitHub} /> GitHub:
 							<p className='contact__text'>{contact.gitHub}</p>
 						</div>
 					}
 					{
 						contact.linkedIn &&
 						<div>
-							<img className='contact__icon' src='../public/images/icons/linkedin.png' /> LinkedIn:
+							<img className='contact__icon' src={linkedIn} /> LinkedIn:
 							<p className='contact__text'>{contact.linkedIn}</p>
+						</div>
+					}
+					{
+						contact.webPage &&
+						<div>
+							<img className='contact__icon' src={webPage} /> Web Page:
+							<p className='contact__text'>{contact.webPage}</p>
 						</div>
 					}
 				</div>

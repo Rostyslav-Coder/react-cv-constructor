@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/Languages.css';
 
 const Languages = ({ languages, setLanguages, isOpen, onOpen }) => {
 	const [tempLanguages, setTempLanguages] = useState({

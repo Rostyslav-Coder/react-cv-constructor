@@ -1,7 +1,6 @@
 // ABOUT COMPONENT
 
 import PropTypes from 'prop-types';
-import '../styles/About.css';
 
 const About = ({ about, setAbout, isOpen, onOpen }) => {
 	const handleAboutFirstnameChange = (e) => {

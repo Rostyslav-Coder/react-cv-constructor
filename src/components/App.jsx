@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import ResumeBuilder from './ResumeBuilder'
 import Preloader from './Preloader'
-import '../styles/App.css'
 
 const App = () => {
 	const [start, setStart] = useState(false)

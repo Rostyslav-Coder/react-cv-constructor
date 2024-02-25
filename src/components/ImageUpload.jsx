@@ -1,8 +1,6 @@
 // IMAGEUPLOAD COMPONENT
 
 import PropTypes from 'prop-types';
-import '../styles/ImageUpload.css';
-// 
 
 const ImageUpload = ({ setImage, isOpen, onOpen }) => {
 	const handleImageUpload = (e) => {

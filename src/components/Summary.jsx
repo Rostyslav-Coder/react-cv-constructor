@@ -1,7 +1,6 @@
 // SUMMARY COMPONENT
 
 import PropTypes from 'prop-types';
-import '../styles/Summary.css'
 
 const Summary = ({ summary, setSummary, isOpen, onOpen }) => {
 	const handleSummaryTextChange = (e) => {

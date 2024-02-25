@@ -1,7 +1,6 @@
 // CONTACT COMPONENT
 
 import PropTypes from 'prop-types';
-import '../styles/Contacts.css';
 
 const Contacts = ({ contact, setContact, isOpen, onOpen }) => {
 	const handleContactLocatinChange = (e) => {
