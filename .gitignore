@@ -27,4 +27,4 @@ dist-ssr
 .eslintrc.cjs
 .prettierignore
 .prettierrc
-.dist
+dist/
